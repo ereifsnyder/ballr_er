@@ -80,7 +80,7 @@ shinyServer(function(input, output, session) {
   filtered_shots = reactive({
     req(input$shot_result_filter, shots()$player)
 
-    filter(shots()$player,
+    dplyr::filter(shots()$player,
       input$shot_result_filter == "all" | shot_made_flag == input$shot_result_filter,
       shot_zone_basic != "Backcourt",
       is.null(input$shot_zone_basic_filter) | shot_zone_basic %in% input$shot_zone_basic_filter,
