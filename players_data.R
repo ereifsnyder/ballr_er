@@ -41,7 +41,7 @@ season_strings = paste(first_year_of_data:last_year_of_data,
                        sep = "-")
 names(season_strings) = first_year_of_data:last_year_of_data
 
-available_players = filter(players, to_year >= first_year_of_data)
+available_players = dplyr::filter(players, to_year >= first_year_of_data)
 
 names_table = table(available_players$name)
 dupe_names = names(names_table[which(names_table > 1)])
