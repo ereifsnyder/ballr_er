@@ -55,7 +55,7 @@ available_players$lower_name = tolower(available_players$name)
 available_players = arrange(available_players, lower_name)
 
 find_player_by_name = function(n) {
-  filter(available_players, lower_name == tolower(n))
+  dplyr::filter(available_players, lower_name == tolower(n))
 }
 
 find_player_id_by_name = function(n) {
